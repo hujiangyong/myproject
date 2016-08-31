@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by hujy on 2016/8/24.
  */
-@ComponentScan
-@Configuration
-@EnableAutoConfiguration
+//@ComponentScan
+//@Configuration
+//@EnableAutoConfiguration
 @SpringBootApplication
 public class Application {
     public static void main(String [] args) throws Exception{
