@@ -1,0 +1,10 @@
+spring:
+    application:
+        name: myproject
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+    profiles:
+        active: dev

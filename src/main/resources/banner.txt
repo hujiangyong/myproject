@@ -1,0 +1,7 @@
+  ${AnsiColor.GREEN}█████ ${AnsiColor.RED} █████  █████
+  ${AnsiColor.GREEN}█         ${AnsiColor.RED} █      █  █      █
+  ${AnsiColor.GREEN}█████ ${AnsiColor.RED} █████  █████
+  ${AnsiColor.GREEN}█         ${AnsiColor.RED} █  █      █
+  ${AnsiColor.GREEN}█████ ${AnsiColor.RED} █      █  █
+
+${AnsiColor.BRIGHT_BLUE}:: ERP 🤓  :: Running Spring Boot ${spring-boot.version} ::
