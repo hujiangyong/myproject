@@ -22,7 +22,7 @@ public class CustomerController {
     @RequestMapping("/save")
     public String  save(){
 
-        Customer customer = new Customer();
+            Customer customer = new Customer();
         customer.setName("hello world");
 
         customerService.save(customer);

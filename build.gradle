@@ -4,17 +4,30 @@ version '0.0.1-SNAPSHOT'
 buildscript {
     repositories {
         jcenter()
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
+        maven { url 'http://repo.spring.io/plugins-release' }
+        maven { url 'http://repo.spring.io/milestone' }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.BUILD-SNAPSHOT")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+        classpath group: 'com.moowork.gradle', name: 'gradle-node-plugin', version: '0.12'
+        classpath group: 'com.moowork.gradle', name: 'gradle-gulp-plugin', version: '0.12'
     }
 }
 
+
 apply plugin: 'java'
 apply plugin: 'spring-boot'
+apply plugin: 'war'
 
+
+apply from: 'gradle/yeoman.gradle'
+
+if (project.hasProperty('prod')) {
+    apply from: 'gradle/profile_prod.gradle'
+} else {
+    apply from: 'gradle/profile_prod.gradle'
+}
 
 repositories {
     jcenter()
@@ -28,5 +41,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     //compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("com.h2database:h2")
+    // https://mvnrepository.com/artifact/javax.inject/javax.inject
+    compile group: 'javax.inject', name: 'javax.inject', version: '1'
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }

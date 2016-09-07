@@ -160,7 +160,15 @@ gulp.task('inject', function () {
             name: 'bower',
             relative: true
         }))
-        .pipe(inject(es.merge(gulp.src(config.app + "/content/css/**/*.css"),gulp.src(config.app + "/content/js/**/*.js"))))
+        .pipe(
+            inject(
+                es.merge(
+                    gulp.src(config.app + "/content/css/**/*.css"),
+                    gulp.src(config.app + "/content/js/**/*.js")
+                )
+            ,{
+            ignorePath:config.app + ""
+        }))
         .pipe(gulp.dest(config.app));
 
     return stream;

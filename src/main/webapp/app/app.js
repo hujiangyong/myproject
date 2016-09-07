@@ -7,17 +7,12 @@ window.React = React;
 window.ReactDOM = require('react-dom');
 window.React.addons = addons;
 
+var Sample = React.createClass({
+    render:function(){
+        return(
+            <div>测试</div>
+        )
+    }
+})
 
-var Main = require('./core/main');
-var User = require('./core/user');
-
-let routes = (
-    <Router history={browserHistory}>
-        <Route path="/" component={Main}>
-            <IndexRoute component={User} />
-            <Route path="User" component={User} />
-        </Route>
-    </Router>
-)
-
-render(routes, document.getElementById('container-react'));
+render(<Sample />, document.getElementById('container-react'));
